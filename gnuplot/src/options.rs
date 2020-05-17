@@ -68,6 +68,7 @@ pub enum PlotOption<T>
 	ArrowSize(f64),
 	/// Width of the whisker bars (as a fraction of the box width) for box and whisker plots.
 	WhiskerBars(f64),
+	Smooth(T),
 }
 
 impl<'l> OneWayOwned for PlotOption<&'l str>
@@ -90,6 +91,7 @@ impl<'l> OneWayOwned for PlotOption<&'l str>
 			ArrowSize(v) => ArrowSize(v),
 			WhiskerBars(v) => WhiskerBars(v),
 			FillPattern(v) => FillPattern(v),
+			Smooth(v) => Smooth(v.into()),
 		}
 	}
 }

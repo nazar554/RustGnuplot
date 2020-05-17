@@ -430,6 +430,13 @@ impl PlotElement
 				write!(writer, " whiskerbars {}", f);
 			}
 		}
+
+		first_opt! {self.options,
+			Smooth(ref s) =>
+			{
+				write!(writer, " smooth {}", &escape(s));
+			}
+		}
 	}
 
 	fn write_data(&self, writer: &mut dyn Writer)

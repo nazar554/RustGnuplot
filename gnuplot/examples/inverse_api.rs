@@ -41,6 +41,7 @@ impl PlotElement for Lines
 				ArrowSize(v) => ArrowSize(*v),
 				WhiskerBars(v) => WhiskerBars(*v),
 				FillPattern(v) => FillPattern(*v),
+				Smooth(v) => Smooth(&v)
 			});
 		}
 
